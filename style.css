@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+:root{
+ --white: #fff;
+ --black: #24292d; 
+ --nav-main: #4070f4;
+ --switchers-main: #0b3cc1;
+ --light-bg: #f0f8ff;
+
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-main);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+nav .navbar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.navbar .logo a{
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--white);
+}
+.navbar .nav-links{
+    display: flex;
+}
+.navbar .nav-links li{
+    list-style: none;
+    margin: 0 8px;
+}
+.navbar .nav-links a{
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.9;
+    color: var(--white);
+    text-decoration: none;
+}
+.navbar .nav-links a:hover{
+    opacity: 1;
+}
+.appearance{
+    display: flex;
+    align-items: center;
+}
+.appearance .light-dark,
+.appearance .color-icon .icons{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 0 10px;
+    color: var(--white);
+    border-radius: 6px;
+    background-color: var(--switchers-main);
+    opacity: 0.8;
+    cursor: pointer;
+}
+.appearance .color-icon {
+    position: relative;
+}
+.appearance .color-icon .icons{
+    width: 70px;
+}
+.appearance .light-dark:hover,
+.appearance .color-icon .icons:hover{
+   opacity: 1;
+}
+.appearance .color-icon .color-box{
+    position: absolute;
+    bottom: -133px;
+    right: 0;
+    min-height: 100px;
+    background-color: var(--white);
+    padding: 16px 20px 20px 20px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+}
+.color-icon.open .color-box{
+    opacity: 1;
+    pointer-events: auto;
+}
+.color-icon.open .arrow{
+    transform: rotate(-180deg);
+}
+.color-icon .color-box::before{
+   content: "";
+   position: absolute;
+   height: 30px;
+   width: 30px;
+   right: 20px;
+   top: -10px;
+   border-radius: 50%;
+   background-color: var(--white);
+}
+.appearance .color-box h3{
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.color-box .color-switchers {
+    display: flex;
+}
+.color-box .color-switchers .btn{
+    width: 40px;
+    height: 40px;
+    background-color:#4070f4;
+    color: var(--nav-main);
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.color-switchers .btn.active{
+    position: relative;
+}
+.color-switchers .btn.active::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px currentColor;
+}
+.color-switchers .btn.orange{
+   background: #f79f1f;
+   color: #f79f1f;
+}
+.color-switchers .btn.purple{
+    background: #8e44ad;
+    color: #8e44ad;
+}
+.color-switchers .btn.green{
+    background: #3a9943;
+    color: #3a9943;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--light-bg);
+    padding: 0 60px;
+}
+.home-content h2{
+     font-size: 40px;
+     color: var(--black);
+}
+.home-content h3{
+     font-size: 35px;
+     color:var(--black);
+}
+.home-content span.darkMode{
+    color: var(--black);
+}
+.home-content span{
+     color: var(--nav-main);
+}
+.home-content p{
+    font-size: 14px;
+    width: 40%;
+    margin-bottom: 30px;
+    color: var(--black);
+}
+.home-content a{
+    font-size: 20px;
+    padding: 12px 24px;
+    background-color: var(--nav-main);
+    color: var(--white);
+    border-radius: 6px;
+    text-decoration: none;
+}
+.home-content a:hover{
+    background-color: var(--switchers-main);
+}
+.home-content a i{
+    transform: rotate(45deg);
+}
